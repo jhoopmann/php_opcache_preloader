@@ -4,10 +4,11 @@ $opts = include 'root.php';
 
 /**
  * @param $path
+ * @param array $except
  */
 function __preload(
-    $path,
-    $except =  []
+    string  $path,
+    array   $except =  []
 ) {
     if(!in_array(
             $path,
@@ -24,8 +25,6 @@ function __preload(
                 error_log('[COMPILE ' . $path . ']');
 
                 require_once $path;
-
-
             }
         } else if(is_dir($path)) {
             $d = opendir($path);
@@ -41,7 +40,7 @@ function __preload(
             }
             closedir($d);
         } else {
-            error_log('[UNKOWN FS NODE ' . $path . ']');
+            error_log('[UNKNOWN NODE ' . $path . ']');
         }
     }
 }

@@ -2,16 +2,12 @@
 
 return [
     'include' => [
-        realpath(__DIR__ . '/../warehouse.sportimport.de/php/autoload.php')
+        realpath(__DIR__ . '/../project/autoload.php')
     ],
     'except' => [
-        '/home/jhoopmann/projects/warehouse.sportimport.de/php/SportImport/Warehouse/Runnable/events.php'
+        '/home/jhoopmann/projects/project/events.php'
     ],
     'directory' => [
-        realpath(
-            __DIR__ . DIRECTORY_SEPARATOR . '..' .
-                DIRECTORY_SEPARATOR . 'warehouse.sportimport.de' . 
-                DIRECTORY_SEPARATOR . 'php/SportImport'
-        )
+        realpath('project')
     ]
 ];
